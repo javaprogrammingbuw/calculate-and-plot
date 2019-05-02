@@ -1,11 +1,5 @@
 //Import of required libraries
 import javax.swing.*;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,14 +10,13 @@ public class Calculate extends JFrame{
 	public Calculate(){
 		input();
 	}
-
 	//https://docs.oracle.com/javase/tutorial/uiswing/layout/grid.html
 	//Input Text Fields
 	private JTextField xtf1,ytf2,ztf3;
 	private JTextField lenBay1,lenBay2;//Length of Bay1 and bay 2
 	private JTextField topBeamW,midBeamW,grBeamW;
 	private JTextField topColW,midColW,grColW;
-	private JTextField lengthBeam1,lengthBeam2;
+	//private JTextField lengthBeam1,lengthBeam2;
 	private JTextField Ca,Cv,Na,Nv,I,R;
 	private JTextField heiT,heiM,heiG,cT;
 	private JTextField vShearT,vShear_M1,vShear_M2,vShear_M3,vShear_M4,vShear_M5,vShearG;
@@ -42,7 +35,7 @@ public class Calculate extends JFrame{
 	private JLabel lenB1,lenB2;
 	private JLabel topBeamWLabel,midBeamWLabel,grBeamWLabel;
 	private JLabel topColWLabel,midColWLabel,grColWLabel;
-	private JLabel lengthBeam1Label,lengthBeam2Label;
+	//private JLabel lengthBeam1Label,lengthBeam2Label;
 	private JLabel CaLabel,CvLabel,NaLabel,NvLabel,ILabel,RLabel;
 	private JLabel heiTLabel,heiMLabel,heiGLabel,cTLabel;
 	private JLabel vShT,vSh_M1,vSh_M2,vSh_M3,vSh_M4,vSh_M5,vShG;
@@ -61,7 +54,6 @@ public class Calculate extends JFrame{
 	private void input(){
 		//Setting title
 		setTitle("Project : Calculate and Plot");
-
 		//Setting the Input text and labels
 		xtf1= new JTextField();
 		xtf1.setPreferredSize(new Dimension(100,30));
@@ -69,7 +61,7 @@ public class Calculate extends JFrame{
 		xtf1.setText("");
 		x= new JLabel();
 		x.setFont(font);
-		x.setText("X");		
+		x.setText("1) X");		
 
 		ytf2= new JTextField();
 		ytf2.setPreferredSize(new Dimension(100,30));
@@ -77,8 +69,7 @@ public class Calculate extends JFrame{
 		ytf2.setText("");
 		y= new JLabel();
 		y.setFont(font);
-		y.setText("Y");
-
+		y.setText("2) Y");
 
 		ztf3= new JTextField();
 		ztf3.setPreferredSize(new Dimension(100,30));
@@ -86,7 +77,7 @@ public class Calculate extends JFrame{
 		ztf3.setText("");
 		z= new JLabel();
 		z.setFont(font);
-		z.setText("Z");
+		z.setText("3) Z");
 
 		lenBay1= new JTextField();
 		lenBay1.setPreferredSize(new Dimension(100,30));
@@ -94,7 +85,7 @@ public class Calculate extends JFrame{
 		lenBay1.setText("");
 		lenB1= new JLabel();
 		lenB1.setFont(font);
-		lenB1.setText("Length of Bay 1 (m)");
+		lenB1.setText("4) Length of Bay 1 (m)");
 
 		lenBay2= new JTextField();
 		lenBay2.setPreferredSize(new Dimension(100,30));
@@ -102,7 +93,7 @@ public class Calculate extends JFrame{
 		lenBay2.setText("");
 		lenB2= new JLabel();
 		lenB2.setFont(font);
-		lenB2.setText("Length of Bay 2 (m)");
+		lenB2.setText("5) Length of Bay 2 (m)");
 
 		topBeamW= new JTextField();
 		topBeamW.setPreferredSize(new Dimension(100,30));
@@ -110,7 +101,7 @@ public class Calculate extends JFrame{
 		topBeamW.setText("");
 		topBeamWLabel= new JLabel();
 		topBeamWLabel.setFont(font);
-		topBeamWLabel.setText("Weight of Top Floor Beam (KN/m)");
+		topBeamWLabel.setText("6) Weight of Top Floor Beam (KN/m)");
 
 		midBeamW= new JTextField();
 		midBeamW.setPreferredSize(new Dimension(100,30));
@@ -118,7 +109,7 @@ public class Calculate extends JFrame{
 		midBeamW.setText("");
 		midBeamWLabel= new JLabel();
 		midBeamWLabel.setFont(font);
-		midBeamWLabel.setText("Weight of Mid Floor Beam (KN/m)");
+		midBeamWLabel.setText("7) Weight of Mid Floor Beam (KN/m)");
 
 		grBeamW= new JTextField();
 		grBeamW.setPreferredSize(new Dimension(100,30));
@@ -126,7 +117,7 @@ public class Calculate extends JFrame{
 		grBeamW.setText("");
 		grBeamWLabel= new JLabel();
 		grBeamWLabel.setFont(font);
-		grBeamWLabel.setText("Weight of Ground Floor Beam (KN/m)");
+		grBeamWLabel.setText("8) Weight of Ground Floor Beam (KN/m)");
 
 		topColW= new JTextField();
 		topColW.setPreferredSize(new Dimension(100,30));
@@ -134,7 +125,7 @@ public class Calculate extends JFrame{
 		topColW.setText("");
 		topColWLabel= new JLabel();
 		topColWLabel.setFont(font);
-		topColWLabel.setText("Weight of Top Floor Column (KN)");
+		topColWLabel.setText("9) Weight of Top Floor Column (KN)");
 
 		midColW= new JTextField();
 		midColW.setPreferredSize(new Dimension(100,30));
@@ -142,7 +133,7 @@ public class Calculate extends JFrame{
 		midColW.setText("");
 		midColWLabel= new JLabel();
 		midColWLabel.setFont(font);
-		midColWLabel.setText("Weight of Mid Floor Column (KN)");
+		midColWLabel.setText("10) Weight of Mid Floor Column (KN)");
 
 		grColW= new JTextField();
 		grColW.setPreferredSize(new Dimension(100,30));
@@ -150,7 +141,7 @@ public class Calculate extends JFrame{
 		grColW.setText("");
 		grColWLabel= new JLabel();
 		grColWLabel.setFont(font);
-		grColWLabel.setText("Weight of Ground Floor Column (KN)");
+		grColWLabel.setText("11) Weight of Ground Floor Column (KN)");
 
 
 		Ca= new JTextField();
@@ -159,7 +150,7 @@ public class Calculate extends JFrame{
 		Ca.setText("");
 		CaLabel= new JLabel();
 		CaLabel.setFont(font);
-		CaLabel.setText("Cofficient of Acc");
+		CaLabel.setText("12) Cofficient of Acc (Ca)");
 
 		Cv= new JTextField();
 		Cv.setPreferredSize(new Dimension(100,30));
@@ -167,7 +158,7 @@ public class Calculate extends JFrame{
 		Cv.setText("");
 		CvLabel= new JLabel();
 		CvLabel.setFont(font);
-		CvLabel.setText("Cofficient of Vel");
+		CvLabel.setText("13) Cofficient of Vel (Cv)");
 
 		Na= new JTextField();
 		Na.setPreferredSize(new Dimension(100,30));
@@ -175,7 +166,7 @@ public class Calculate extends JFrame{
 		Na.setText("");
 		NaLabel= new JLabel();
 		NaLabel.setFont(font);
-		NaLabel.setText("Near Source factor acc");
+		NaLabel.setText("14) Near Source factor acc (Na)");
 
 		Nv= new JTextField();
 		Nv.setPreferredSize(new Dimension(100,30));
@@ -183,7 +174,7 @@ public class Calculate extends JFrame{
 		Nv.setText("");
 		NvLabel= new JLabel();
 		NvLabel.setFont(font);
-		NvLabel.setText("Near Source factor vel");
+		NvLabel.setText("15) Near Source factor vel (Nv)");
 
 		I= new JTextField();
 		I.setPreferredSize(new Dimension(100,30));
@@ -191,7 +182,7 @@ public class Calculate extends JFrame{
 		I.setText("");
 		ILabel= new JLabel();
 		ILabel.setFont(font);
-		ILabel.setText("Importance Factor");
+		ILabel.setText("16) Importance Factor (I)");
 
 		R= new JTextField();
 		R.setPreferredSize(new Dimension(100,30));
@@ -199,7 +190,7 @@ public class Calculate extends JFrame{
 		R.setText("");
 		RLabel= new JLabel();
 		RLabel.setFont(font);
-		RLabel.setText("Reduction Factor");
+		RLabel.setText("17) Reduction Factor (R)");
 
 		heiT= new JTextField();
 		heiT.setPreferredSize(new Dimension(100,30));
@@ -207,7 +198,7 @@ public class Calculate extends JFrame{
 		heiT.setText("");
 		heiTLabel= new JLabel();
 		heiTLabel.setFont(font);
-		heiTLabel.setText("Top Height (m)");
+		heiTLabel.setText("18) Top Height (m)");
 
 		heiM= new JTextField();
 		heiM.setPreferredSize(new Dimension(100,30));
@@ -215,7 +206,7 @@ public class Calculate extends JFrame{
 		heiM.setText("");
 		heiMLabel= new JLabel();
 		heiMLabel.setFont(font);
-		heiMLabel.setText("Middle Height (m)");
+		heiMLabel.setText("19) Middle Height (m)");
 
 		heiG= new JTextField();
 		heiG.setPreferredSize(new Dimension(100,30));
@@ -223,7 +214,7 @@ public class Calculate extends JFrame{
 		heiG.setText("");
 		heiGLabel= new JLabel();
 		heiGLabel.setFont(font);
-		heiGLabel.setText("Ground Height (m)");
+		heiGLabel.setText("20) Ground Height (m)");
 
 		cT= new JTextField();
 		cT.setPreferredSize(new Dimension(100,30));
@@ -231,7 +222,7 @@ public class Calculate extends JFrame{
 		cT.setText("");
 		cTLabel= new JLabel();
 		cTLabel.setFont(font);
-		cTLabel.setText("Height Factor");
+		cTLabel.setText("21) Height Factor (Ct)");
 		//Setting the Calculate button text and labels
 		calculate = new JButton();
 		cal= new JTextField();
@@ -303,7 +294,6 @@ public class Calculate extends JFrame{
 		tH.setFont(font);
 		tH.setText("Total Height (m)");		
 
-
 		vShearT= new JTextField();
 		vShearT.setPreferredSize(new Dimension(100,30));
 		vShearT.setFont(font);
@@ -363,7 +353,6 @@ public class Calculate extends JFrame{
 
 		// Adding functions when on click is performed in calculate button 
 		calculate.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				inpVal [0]=Double.parseDouble(lenBay1.getText());
@@ -386,7 +375,6 @@ public class Calculate extends JFrame{
 				inpVal [17]=Double.parseDouble(cT.getText());
 				// TODO Auto-generated method stub
 				if(xtf1.getText()!=null) {	
-
 					String	xString=xtf1.getText();
 					int xdou=Integer.parseInt(xString)	;
 					int xans =propX(xdou);
@@ -396,7 +384,6 @@ public class Calculate extends JFrame{
 					String	yString=ytf2.getText();
 					int ydou=Integer.parseInt(yString)	;
 					String yans =propY(xdou);
-
 					valY.setText(yans);
 
 					String	zString=ztf3.getText();
@@ -404,8 +391,6 @@ public class Calculate extends JFrame{
 					double zans =propZ(zdou);
 					String ansz= Double.toString(zans);
 					valZ.setText(ansz);
-
-
 
 					double t=timePeriod(xdou,inpVal);
 					String tT=Double.toString(t);
@@ -422,7 +407,6 @@ public class Calculate extends JFrame{
 					double v=baseShear(xdou,inpVal);
 					String _v=Double.toString(v);
 					bShear.setText(_v);
-
 
 					double sTg [] =fXtg(xdou,inpVal);
 					vShearT.setText(Double.toString(sTg[1]));
@@ -471,9 +455,6 @@ public class Calculate extends JFrame{
 						vShear_M4.setText(Double.toString(sM[1]));
 						vShear_M5.setText(Double.toString(sM[0]));
 					}
-
-
-
 				}
 				else {
 					valX.setText("No Input was entered");
@@ -482,7 +463,6 @@ public class Calculate extends JFrame{
 		});
 		//Adding functions on click for ploting a graph
 		plot.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent event) {
 				inpVal [0]=Double.parseDouble(lenBay1.getText());
@@ -511,30 +491,41 @@ public class Calculate extends JFrame{
 				double sM [] =fXmid(xdou,inpVal);
 				if(xans==2 ) {
 					double [] data= {sTg[0],sTg[1]};
-					graphPlot(data,xdou);
+					//graphPlot(data,xdou);
+					Plot pl =new Plot();
+					pl.graphPlot(data, xdou);
 				}
 				if(xans==3 ) {
 					double [] data= {sTg[0],sM[0],sTg[1]};
-					graphPlot(data,xdou);
+					Plot pl =new Plot();
+					pl.graphPlot(data, xdou);
+					//graphPlot(data,xdou);
 				}
 				else if(xans==4) {
 					double [] data= {sTg[0],sM[0],sM[1],sTg[1]};
-					graphPlot(data,xdou);	
+					//graphPlot(data,xdou);
+					Plot pl =new Plot();
+					pl.graphPlot(data, xdou);
 				}
 				else if(xans==5) {
 					double [] data= {sTg[0],sM[0],sM[1],sM[2],sTg[1]};
-
-					graphPlot(data,xdou);	
+					//graphPlot(data,xdou);	
+					Plot pl =new Plot();
+					pl.graphPlot(data, xdou);
 				}
 				else if(xans==6) {
 					double [] data= {sTg[0],sM[0],sM[1],sM[2],sM[3],sTg[1]};
 
-					graphPlot(data,xdou);	
+					//graphPlot(data,xdou);	
+					Plot pl =new Plot();
+					pl.graphPlot(data, xdou);
 				}
 				else if(xans==7) {
 					double [] data= {sTg[0],sM[0],sM[1],sM[2],sM[3],sM[4],sTg[1]};
 
-					graphPlot(data,xdou);	
+					//graphPlot(data,xdou);	
+					Plot pl =new Plot();
+					pl.graphPlot(data, xdou);
 				}
 			}});
 		createFlowLayout();
@@ -556,7 +547,6 @@ public class Calculate extends JFrame{
 
 		pane.add(z);
 		pane.add(ztf3);
-
 
 		pane.add(lenB1);
 		pane.add(lenBay1);
@@ -642,9 +632,7 @@ public class Calculate extends JFrame{
 	}
 	// Method 1 for no of floors
 	public int propX(int x) {
-
 		int X=0;
-
 		switch(x) {
 		case 0: X=3;
 		break;
@@ -670,47 +658,38 @@ public class Calculate extends JFrame{
 		}
 		return X;
 	}
+
 	//Method 2 for Material properties
 	public  static String propY(int y) {
 		String Y="";
 		switch(y) {
 		case 0: Y="LB-Infill:weak-FIW";
-		//System.out.println("RC:LowerBound"+"Infill:weak"+"FIW");
 		break;
 		case 1: Y="LB-Infill:weak-SS";
 		break;
-		//	System.out.println("RC:LowerBound"+"Infill:weak"+"SS");
 		case 2: Y="LB-Infill:medium-FIW";
 		break;
-		//System.out.println("RC:LowerBound"+"Infill:medium"+"FIW");
 		case 3: Y="LB-Infill:strong-FIW";
 		break;
-		//System.out.println("RC:LowerBound"+"Infill:strong"+"FIW");
 		case 4: Y="LB-Infill:strong-FIW";
 		break;
-		//System.out.println("RC:LowerBound"+"Infill:strong"+"FIW");
 		case 5: Y="UB-Infill:weak-FIW";
 		break;
-		//System.out.println("RC:UpperBound"+"Infill:weak"+"FIW");
 		case 6: Y="UB-Infill:weak-SS";
 		break;
-		//System.out.println("RC:UpperBound"+"Infill:weak"+"SS");
 		case 7: Y="UB-Infill:medium-FIW";
 		break;
-		//System.out.println("RC:UpperBound"+"Infill:medium"+"FIW");
 		case 8: Y="UB-Infill:strong-FIW";
 		break;
-		//System.out.println("RC:UpperBound"+"Infill:strong"+"FIW");
 		case 9: Y="UB-Infill:strong-FIW";
 		break;
-		//System.out.println("RC:UpperBound"+"Infill:strong"+"FIW");
 		default : Y="Wrong input";
 		}
 		return Y;
 	}
+
 	//Method 3 for Time history
 	public static  double propZ(int z) {
-
 		int Z=0;
 		switch(z) {
 		case 0: Z=1;
@@ -737,6 +716,7 @@ public class Calculate extends JFrame{
 		}
 		return Z;
 	}
+
 	//Method 4 for total weight of building
 	public  double weightTotal(int x,double [] inpVal) {
 
@@ -765,6 +745,7 @@ public class Calculate extends JFrame{
 		double totalWeight=beamWeight+colWeight;
 		return totalWeight;
 	}
+
 	//Method 5 for top weight
 	public  double weightTop(double [] inpVal) {
 
@@ -792,6 +773,7 @@ public class Calculate extends JFrame{
 		double totalWeight=beamWeight+colWeight;
 		return totalWeight;
 	}
+
 	//Method 6 for bottom weight 
 	public  double weightBot(double [] inpVal) {
 		double lenb1=inpVal [0];
@@ -818,9 +800,9 @@ public class Calculate extends JFrame{
 		double totalWeight=beamWeight+colWeight;
 		return totalWeight;
 	}
+
 	//Method 7 for Middle weight 
 	public  double weightMid(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -846,9 +828,9 @@ public class Calculate extends JFrame{
 		double totalWeight=beamWeight+colWeight;
 		return totalWeight;
 	}
+
 	//Method 8 for Base shear cofficient
 	public double baseShearCoff(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -871,9 +853,9 @@ public class Calculate extends JFrame{
 		double baseCoff=cv*i/(r*t);
 		return baseCoff;
 	}
+
 	//Method 9 for timeperiod of building
 	public  double timePeriod(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -897,9 +879,9 @@ public class Calculate extends JFrame{
 		double tPeriod=ct*(Math.pow(hn, (0.75)));
 		return tPeriod;
 	}
+
 	//Method 10 for total height calculation of building
 	public double heightCal(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -922,11 +904,10 @@ public class Calculate extends JFrame{
 		int noOfFloors=propX(x);
 		double tHeight=hT+hG+(noOfFloors-2)*hM;
 		return tHeight;
-
 	}
+
 	// Method 11 for Base shear calculation
 	public double baseShear(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -962,9 +943,9 @@ public class Calculate extends JFrame{
 			return baseShear;
 		}	
 	}
+
 	// Method 12 for cumputing ft
 	public double comFt(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -997,9 +978,9 @@ public class Calculate extends JFrame{
 			return ft;
 		}
 	}
-	// Method 13 for computing sum of weights of ground and top
-	public double sumOfFnWei(int x,double [] inpVal) {
 
+	// Method 13 for computing sum of weights of all floors,it is a cumulative sum
+	public double sumOfFnWei(int x,double [] inpVal) {
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -1038,9 +1019,9 @@ public class Calculate extends JFrame{
 			return sumGnT;
 		}
 	}
+
 	// Method 14 for computing sum of weights of Middle floors
 	public double [] wxhx(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -1081,9 +1062,9 @@ public class Calculate extends JFrame{
 			return valO;
 		}
 	}
+
 	// Method 15 for computing sum of weights of ground and top not cumulative
 	public double [] wxhxGnT(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -1111,9 +1092,9 @@ public class Calculate extends JFrame{
 		double valO [] = {sumG,sumT};
 		return valO;
 	}
+
 	//Method 16 cumputing of V minus Ft factor
 	public double  vMinFt(int x,double [] inpVal) {
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -1132,14 +1113,15 @@ public class Calculate extends JFrame{
 		double hM=inpVal [15];
 		double hG=inpVal [16];
 		double ct=inpVal [17];
+
 		double v = baseShear(x,inpVal);
 		double ft= comFt(x,inpVal);
 		return v-ft;
 	}
+
 	//Method 17 for storey forces for middle floors
 	public double [] fXmid(int x,double [] inpVal) {
 		int noOfFloors=propX(x);
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -1169,10 +1151,10 @@ public class Calculate extends JFrame{
 		}
 		return storeyF;
 	}
+
 	//Method 18 for top and ground floor
 	public double [] fXtg(int x,double [] inpVal) {
 		int noOfFloors=propX(x);
-
 		double lenb1=inpVal [0];
 		double lenb2=inpVal [1];
 		double topBW=inpVal [2];
@@ -1200,36 +1182,12 @@ public class Calculate extends JFrame{
 		}
 		return storeyF;
 	}
-	//Method 19 for ploting of a graph 
-	//https://www.youtube.com/watch?v=cw31L_OwX3A&list=LLRkVz3oUd1GQ1KNwXBC_NqA&index=3&t=1844s
-	public void graphPlot(double [] data,int x ) {
 
-		int noOfFloors=propX(x);
-		JFrame graphFrame = new JFrame();
-		graphFrame.setTitle("Storey Shear");
-		graphFrame.setSize(500,500);
-		graphFrame.setLayout(new BorderLayout());
-		graphFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-		XYSeries ser=new XYSeries("");
-		for (int i=0;i<noOfFloors;i++) {
-			ser.add(data[i], (i+1)*1);
-		}
-		XYSeriesCollection xy=new XYSeriesCollection();
-		xy.addSeries(ser);
-		JFreeChart chart = ChartFactory.createXYLineChart(
-				"Storey Shear of 2D Frame", 
-				"Force",
-				"No of Stories", xy,  PlotOrientation.VERTICAL, false,  false,  false);
-		graphFrame.add(new ChartPanel(chart),  BorderLayout.CENTER);
-		graphFrame.setVisible(true);
-	}
 	public static void main(String[] args){
 		//places the application on the Swing Event Queue such that all UI updates are concurrency-safe
 		EventQueue.invokeLater(() ->{
 			Calculate cal = new Calculate();
 			cal.setVisible(true);
 		});
-
 	}
 }
