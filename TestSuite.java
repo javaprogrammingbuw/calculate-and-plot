@@ -11,6 +11,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual, 0.1);
 	}
+	
 	@Test public static void test1() {
 		//define
 		Calculate cal = new Calculate();
@@ -20,6 +21,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual, 0.1);
 	}
+	
 	@Test public static void test2() {
 		//define
 		Calculate cal = new Calculate();
@@ -30,6 +32,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual,0.1);
 	}
+	
 	@Test public static void test3() {
 		//define
 		Calculate cal = new Calculate();
@@ -40,6 +43,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual, 0.1);
 	}
+	
 	@Test public static void test4() {
 		//define
 		Calculate cal = new Calculate();
@@ -50,6 +54,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual, 0.1);
 	}
+	
 	@Test public static void test5() {
 		//define
 		Calculate cal = new Calculate();
@@ -60,6 +65,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual, 0.1);
 	}
+	
 	@Test public static void test6() {
 		//define
 		Calculate cal = new Calculate();
@@ -70,6 +76,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual,0.1);
 	}
+	
 	@Test public static void test7() {
 		//define
 		Calculate cal = new Calculate();
@@ -84,6 +91,7 @@ public class TestSuite {
 		assertEquals(expected1 ,actual1,0.1);
 		assertEquals(expected2 ,actual2,0.1);
 	}
+	
 	@Test public static void test8() {
 		//define
 		Calculate cal = new Calculate();
@@ -97,6 +105,7 @@ public class TestSuite {
 		assertEquals(expected1 ,actual1,1);
 		assertEquals(expected2 ,actual2,1);
 	}
+	
 	@Test public static void test9() {
 		//define
 		Calculate cal = new Calculate();
@@ -118,6 +127,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual,0.001);
 	}
+	
 	@Test public static void test11() {
 		//define
 		Calculate cal = new Calculate();
@@ -125,14 +135,13 @@ public class TestSuite {
 		double actual []=cal.fXtg(4,inpVal);
 		double actual1=actual[0];
 		double actual2=actual[1];
-
-		
 		double expected1 = 21.50440961;
 		double expected2 = 116.2430701;
 		//test
 		assertEquals(expected1 ,actual1,1);
 		assertEquals(expected2 ,actual2,1);
 	}
+	
 	@Test public static void test12() {
 		//define
 		Calculate cal = new Calculate();
@@ -143,7 +152,6 @@ public class TestSuite {
 		double actual3=actual[2];
 		double actual4=actual[3];
 		double actual5=actual[4];
-		
 		double expected1 = 39.11501665;
 		double expected2 = 57.16810126;
 		double expected3 = 75.22118586;
@@ -156,6 +164,7 @@ public class TestSuite {
 		assertEquals(expected4 ,actual4,1);
 		assertEquals(expected5 ,actual5,1);
 	}
+	
 	@Test public static void test13() {
 		//define
 		Calculate cal = new Calculate();
@@ -166,6 +175,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual,0.001);
 	}
+	
 	@Test public static void test14() {
 		//define
 		Calculate cal = new Calculate();
@@ -176,6 +186,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual,1);
 	}
+	
 	@Test public static void test15() {
 		//define
 		Calculate cal = new Calculate();
@@ -186,6 +197,7 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual,0.001);
 	}
+	
 	@Test public static void test16() {
 		//define
 		Calculate cal = new Calculate();
@@ -194,7 +206,4 @@ public class TestSuite {
 		//test
 		assertEquals(expected,actual, 0.001);
 	}
-	
-	
-	
 }
